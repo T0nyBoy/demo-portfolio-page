@@ -1,0 +1,248 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+//table storing lots of variables
+$colors: (
+    primary: #F0DB4F,
+    secondary: #323330,
+    accent: #827100,
+    bright: #f0f0f0,
+    //light function (normal css funciton, lightens the color by the % amount)
+    primary-light: lighten(#F0DB4F, 10%),
+    primary-dark: darken(#F0DB4F, 20%)
+);
+
+@function color($colorName){
+    @return map-get($colors, $colorName)
+    // ---------------
+    // so whenever we call a call a color we dont need to call map-get($colors...)
+    // we can call color(primary) for example
+}
+
+
+.mainBox{
+    width: 530px;
+    height: 530px;
+    display: flex;
+    flex-direction: row;
+    margin: 2em auto;
+    background-color: color(secondary);
+    border-radius: 35px;
+    box-shadow: 0 0 90px color(primary);
+    box-sizing: border-box;
+
+    .leftColumn{
+        display: flex;
+        flex-direction: column;
+        flex: 0 1 45%;
+        // border: 2px solid red;
+        border-radius: 35px 0 0 35px;
+        background-color: color(secondary);
+
+        .logoBox{
+            display: flex;
+            flex: 1 0 50%;
+            align-items: center;
+            justify-content: center;
+            border-radius: 35px 0 0 0;
+            background-color: color(primary);
+            clip-path: polygon(0% 0, 100% 0%, 75% 100%, 0% 100%);
+            overflow: visible;
+
+            color: color(secondary);
+            font-family: "Rubik";
+            font-size: 3.2em;
+            writing-mode: vertical-rl;
+            text-align: center;
+            line-height: 1.5;
+        }
+
+        .otherContactWays{
+            display: flex;
+            flex: 1 0 50%;
+            align-items: flex-end;
+            padding-bottom: 2.3em;
+            justify-content: center;
+            box-sizing: border-box;
+            border-radius: 0 0 0 35px;
+            background-color: color(primary);
+            clip-path: polygon(0 0, 75% 0%, 100% 100%, 0% 100%);
+
+            span{
+                color: color(secondary);
+                margin: 0 0.2em;
+                font-size: 1.5em;
+            }
+        }
+    }
+
+    .mainContactFrame{
+        display: flex;
+        flex-direction: column;
+        flex: 1 1 55%;
+        width: 100%;
+        justify-content: center;
+        align-items: center;        
+        border-radius: 0 35px 35px 0;
+        background-color: color(secondary);
+
+        h1{
+            color: color(primary);
+            font-weight: 900;
+        }
+
+        #contactForm{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        padding: 0.5em;
+        box-sizing: border-box;
+
+        #userName, #email, #phone{
+            border: 2px solid color(primary);
+            width: 260px;
+            height: 2.2em;
+            border-radius: 25px;
+            padding-left: 0.7em;
+            font-family: "Rubik";
+            box-sizing: border-box;
+
+            &:focus{
+                box-shadow: 0 0 6px color(primary);
+            }
+        }
+
+
+        #message{
+            display: flex;
+            border: 2px solid color(primary);
+            border-radius: 8px;
+            padding: 0 0.3em;
+            font-family: "Rubik";
+            box-sizing: border-box;
+            resize: none;
+            text-overflow: scroll;
+
+            &:focus{
+                box-shadow: 0 0 6px color(primary);
+            }
+        }
+
+        .robot{
+                label{
+                font-size: 0.8em;
+                    color: color(primary);
+                }
+                #imRobot{
+                    outline: 2px solid color(primary);
+                }
+
+            }
+
+            .submitBtn{
+               width: 260px;
+               height: 2em;
+               background-color: color(primary);
+               color: color(background);
+               border-radius: 8px;
+               border: none;
+               font-size: 1.1em;
+               font-weight: bold;
+               transition: background-color 120ms ease-in;
+
+               &:hover{
+                   background-color: color(primary-light);
+               }
+               &:active{
+                background-color: color(primary-dark);
+                box-shadow: inset 2px 2px 8px darkslategray;
+               }
+            }
+            
+            input, #submitBtn, #message{
+                margin-bottom: -1em;
+            }      margin-top: 0.2em;
+           
+
+        }
+        }
+    }
+
+    @media (max-width: 815px){
+        .mainBox{
+            width: 100%;
+            max-width: 450px;
+            height: 93vh;
+            margin-top: 0;
+            display: flex;
+            flex-direction: column;
+            background-color: color(secondary);
+            border-radius: 0px;
+            box-shadow: none;
+            box-sizing: border-box;
+
+            .mainContactFrame{
+                flex: 1 1 90%;
+            }
+    
+            .leftColumn{
+                flex: 0 1 10%;
+                background-color: color(primary);
+                height: 60px;
+                order: 2;
+
+
+                .logoBox{
+                    display: flex;
+                    flex: 1 0 90%;
+                    align-items: center;
+                    justify-content: center;
+                    border-radius: 0px;
+                    background-color: color(primary);
+                    clip-path: 0;
+                    clip-path: none;
+
+                    font-size: 2em;
+                    writing-mode: horizontal-tb;
+                    text-align: center;
+                    line-height: 1.5;
+                }
+
+
+                .otherContactWays{
+                    display: flex;
+                    align-items: flex-end;
+                    justify-content: space-around;
+                    padding-bottom: 0.5em;
+                    border-radius: 0 0 0 0px;
+                    background-color: color(primary);
+                    clip-path: none;
+                }
+            }
+        }
+
+    }
+
+    .forError, .forSuccess {
+        font-size: 0.8em;
+        max-width: 340px;
+        min-width: 340px; /* Set a default minimum width */
+        margin-left: -170px; /* Divide value of min-width by 2 */
+        background-color: rgba(255, 93, 93, 0.80); /* Black background color */
+        color: #fff; /* White text color */
+        text-align: center; /* Centered text */
+        border-radius: 8px; /* Rounded borders */
+        padding: 16px 8px; /* Padding */
+        position: fixed; /* Sit on top of the screen */
+        z-index: 1; /* Add a z-index if needed */
+        left: 50%; /* Center the snackbar */
+        top: 0.7em; /* 30px from the bottom */
+      }
+
+      .forSuccess{
+        max-width: 120px;
+        min-width: 120px;
+        margin-left: -60px;
+        background-color: rgba(0, 216, 194, 0.796);
+        right: 20%;
+      }

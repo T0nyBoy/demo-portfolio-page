@@ -1,0 +1,29 @@
+.footerContainer{
+    display: flex;
+    width: 100%;
+    height: 2em;
+    margin-top: 1em;
+    position: fixed;
+    bottom: 0px;
+
+    padding: 0 3em;
+    box-sizing: border-box;
+
+    justify-content: space-between;
+    align-items: center;
+
+    background-color:  #323330;
+    color: #F0DB4F;
+
+    font-size: 1.5em;
+}
+
+.footerItem span{
+    margin: 0 0 0 0.8em;
+   
+}
+
+.footerItem  a{
+    color: inherit;
+    text-decoration: none;
+}
