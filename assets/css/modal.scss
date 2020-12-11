@@ -54,10 +54,17 @@ $colors: (
 
   /* Modal Content */
   .modal-content {
+    display: flex;
+    flex-direction: column;
+    max-width: 80vw;
+    height: 80vh;
+    box-sizing: border-box;
+    overflow: scroll;
+    padding: 1em;
+
+
     background-color: color(primary);
     margin: auto;
-    padding: 20px;
-    width: 80%;
   }
   
   /* The Close Button */
