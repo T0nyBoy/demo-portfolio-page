@@ -157,6 +157,7 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  width: 260px;
   border: 2px solid #F0DB4F;
   border-radius: 8px;
   padding: 0 0.3em;
