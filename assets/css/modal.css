@@ -18,8 +18,6 @@
   /* Full height */
   overflow: auto;
   /* Enable scroll if needed */
-  background-color: black;
-  /* Fallback color */
   background-color: #323330ee;
   /* Black w/ opacity */
 }

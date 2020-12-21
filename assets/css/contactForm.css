@@ -12,8 +12,6 @@
   margin: 2em auto;
   background-color: #323330;
   border-radius: 35px;
-  -webkit-box-shadow: 0 0 90px #F0DB4F;
-          box-shadow: 0 0 90px #F0DB4F;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
@@ -48,8 +46,6 @@
           justify-content: center;
   border-radius: 35px 0 0 0;
   background-color: #F0DB4F;
-  -webkit-clip-path: polygon(0% 0, 100% 0%, 75% 100%, 0% 100%);
-          clip-path: polygon(0% 0, 100% 0%, 75% 100%, 0% 100%);
   overflow: visible;
   color: #323330;
   font-family: "Rubik";
@@ -79,8 +75,6 @@
           box-sizing: border-box;
   border-radius: 0 0 0 35px;
   background-color: #F0DB4F;
-  -webkit-clip-path: polygon(0 0, 75% 0%, 100% 100%, 0% 100%);
-          clip-path: polygon(0 0, 75% 0%, 100% 100%, 0% 100%);
 }
 
 .mainBox .leftColumn .otherContactWays span {
@@ -109,6 +103,7 @@
           align-items: center;
   border-radius: 0 35px 35px 0;
   background-color: #323330;
+  border: 8px solid #F0DB4F;
 }
 
 .mainBox .mainContactFrame h1 {
